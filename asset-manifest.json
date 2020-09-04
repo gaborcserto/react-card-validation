@@ -1,22 +1,30 @@
 {
   "files": {
-    "main.css": "/react-card-validation/static/css/main.d05e00ed.chunk.css",
-    "main.js": "/react-card-validation/static/js/main.c35375f1.chunk.js",
-    "main.js.map": "/react-card-validation/static/js/main.c35375f1.chunk.js.map",
+    "main.css": "/react-card-validation/static/css/main.2914ae97.chunk.css",
+    "main.js": "/react-card-validation/static/js/main.d8bc59a6.chunk.js",
+    "main.js.map": "/react-card-validation/static/js/main.d8bc59a6.chunk.js.map",
     "runtime-main.js": "/react-card-validation/static/js/runtime-main.d81918d6.js",
     "runtime-main.js.map": "/react-card-validation/static/js/runtime-main.d81918d6.js.map",
-    "static/js/2.8abc1ace.chunk.js": "/react-card-validation/static/js/2.8abc1ace.chunk.js",
-    "static/js/2.8abc1ace.chunk.js.map": "/react-card-validation/static/js/2.8abc1ace.chunk.js.map",
+    "static/js/2.3d0037c8.chunk.js": "/react-card-validation/static/js/2.3d0037c8.chunk.js",
+    "static/js/2.3d0037c8.chunk.js.map": "/react-card-validation/static/js/2.3d0037c8.chunk.js.map",
     "index.html": "/react-card-validation/index.html",
-    "precache-manifest.c24e7458ea6010a7551c9356d5413318.js": "/react-card-validation/precache-manifest.c24e7458ea6010a7551c9356d5413318.js",
+    "precache-manifest.10d5f4e618bc9e7e554cdc0772e95616.js": "/react-card-validation/precache-manifest.10d5f4e618bc9e7e554cdc0772e95616.js",
     "service-worker.js": "/react-card-validation/service-worker.js",
-    "static/css/main.d05e00ed.chunk.css.map": "/react-card-validation/static/css/main.d05e00ed.chunk.css.map",
-    "static/js/2.8abc1ace.chunk.js.LICENSE.txt": "/react-card-validation/static/js/2.8abc1ace.chunk.js.LICENSE.txt"
+    "static/css/main.2914ae97.chunk.css.map": "/react-card-validation/static/css/main.2914ae97.chunk.css.map",
+    "static/js/2.3d0037c8.chunk.js.LICENSE.txt": "/react-card-validation/static/js/2.3d0037c8.chunk.js.LICENSE.txt",
+    "static/media/amex.svg": "/react-card-validation/static/media/amex.9371d872.svg",
+    "static/media/diners.svg": "/react-card-validation/static/media/diners.bf304632.svg",
+    "static/media/discover.svg": "/react-card-validation/static/media/discover.f5f07f06.svg",
+    "static/media/jcb.svg": "/react-card-validation/static/media/jcb.4235ed58.svg",
+    "static/media/maestro.svg": "/react-card-validation/static/media/maestro.5affd1e3.svg",
+    "static/media/mastercard.svg": "/react-card-validation/static/media/mastercard.f4f48333.svg",
+    "static/media/unionpay.svg": "/react-card-validation/static/media/unionpay.8ca5d534.svg",
+    "static/media/visa.svg": "/react-card-validation/static/media/visa.80a6f9aa.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.d81918d6.js",
-    "static/js/2.8abc1ace.chunk.js",
-    "static/css/main.d05e00ed.chunk.css",
-    "static/js/main.c35375f1.chunk.js"
+    "static/js/2.3d0037c8.chunk.js",
+    "static/css/main.2914ae97.chunk.css",
+    "static/js/main.d8bc59a6.chunk.js"
   ]
 }
