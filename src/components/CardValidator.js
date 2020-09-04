@@ -1,6 +1,6 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import Form from './CardForm/Form';
+import Form from './CardForm/CardForm';
 import Card from './Card/Card';
 
 const initialState = {

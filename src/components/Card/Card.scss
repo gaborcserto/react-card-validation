@@ -99,6 +99,44 @@
 			right: inherit;
 		}
 	}
+
+	@include media-breakpoint-down(xs) {
+		height: 142.5px;
+		width: 240px;
+
+		&__number {
+			margin: 45px 7.5px 15px;
+			font-size: 16px;
+		}
+
+		&__expiry-date,
+		&__owner {
+			font-size: 9px;
+		}
+
+		&__type {
+			bottom: 15px;
+			font-size: 30px;
+			right: 15px;
+		}
+
+		&__strip {
+			height: 28.5px;
+			margin: 6px 0 9px;
+		}
+
+		&__secret {
+			background-color: #fff;
+			height: 23.25px;
+			padding: 4px 9px;
+		}
+
+		&--back {
+			.card__type {
+				bottom: 7px;
+			}
+		}
+	}
 }
 
 .panel {
