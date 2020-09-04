@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i');
+.card {
+	background: #2980b9;
+	background: linear-gradient(to right, #2980b9, #2c3e50);
+	border: 0;
+	border-radius: 20px;
+	box-shadow: 0 5px 16px 0 rgba($black, 0.55);
+	color: #fff;
+	display: inline-block;
+	font-family: 'Space Mono', monospace;
+	height: 190px;
+	margin: 0 auto 20px;
+	padding: 10px;
+	position: relative;
+	text-align: left;
+	vertical-align: middle;
+	width: 320px;
+
+	&__number {
+		font-size: 20px;
+		height: 30px;
+		margin: 60px 10px 20px;
+		width: 100%;
+		word-spacing: 10px;
+
+		.numbers {
+			display: inline-block;
+			height: 30px;
+			width: 11px !important;
+		}
+	}
+
+	&__expiry-date {
+		font-size: 12px;
+		padding-left: 10px;
+	}
+
+	&__owner {
+		font-size: 12px;
+		padding-left: 10px;
+		text-align: left;
+		text-transform: uppercase;
+	}
+
+	&__type {
+		bottom: 20px;
+		font-size: 40px;
+		position: absolute;
+		right: 20px;
+	}
+
+	&__strip {
+		background: #303030;
+		height: 38px;
+		margin: 8px 0 15px;
+	}
+
+	&__back-content {
+		padding: 15px 15px 0;
+	}
+
+	&__secret {
+		background-color: #fff;
+		height: 31px;
+		padding: 5px 12px;
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: -3px;
+			left: -3px;
+			height: calc(100% + 6px);
+			width: calc(100% - 42px);
+			border-radius: 4px;
+			background: repeating-linear-gradient(45deg, #ededed, #ededed 5px, #f9f9f9 5px, #f9f9f9 10px);
+		}
+
+		&--last {
+			color: #303030;
+			text-align: right;
+			margin: 0;
+			font-size: 14px;
+		}
+	}
+
+	&--front {
+		font-size: 16px;
+		text-shadow: 0 1px 1px rgba(0, 0, 0, .6);
+	}
+
+	&--back {
+		padding-left: 0;
+		padding-right: 0;
+		text-align: left;
+
+		.card__type {
+			bottom: 10px;
+			left: 12px;
+			right: inherit;
+		}
+	}
+}
+
+.panel {
+	text-align: center;
+}
