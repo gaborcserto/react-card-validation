@@ -31,6 +31,11 @@
 		position: absolute;
 		top: 30px;
 		width: calc(100% - 10px);
+
+		.invalid-feedback {
+			position: absolute;
+			top: 68px;
+		}
 	}
 
 	.btn-pay {
@@ -43,6 +48,10 @@
 		&:hover {
 			background-position: right center;
 		}
+	}
+
+	.invalid-feedback {
+		font-size: 10px;
 	}
 
 	@include media-breakpoint-down(xs) {

@@ -1,8 +1,16 @@
 import React, { useMemo } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import gradient from 'random-gradient';
 import ReactCardFlip from 'react-card-flip';
 import ReactTextTransition from "react-text-transition";
+
+import visa from 'payment-icons/min/mono/visa.svg';
+import mastercard from 'payment-icons/min/mono/mastercard.svg';
+import amex from 'payment-icons/min/mono/amex.svg';
+import diners from 'payment-icons/min/mono/diners.svg';
+import discover from 'payment-icons/min/mono/discover.svg';
+import jcb from 'payment-icons/min/mono/jcb.svg';
+import unionpay from 'payment-icons/min/mono/unionpay.svg';
+import maestro from 'payment-icons/min/mono/maestro.svg';
 
 const Card = ({
 	              cardHolder,
@@ -22,9 +30,10 @@ const Card = ({
 		'visa': '^4',
 		'amex': '^(34|37)',
 		'mastercard': '^5[1-5]',
+		'maestro': '^(?:5[0678]\\\\d{0,2}|6304|67\\\\d{0,2})',
 		'discover': '^6011',
-		//'unionpay': '^62',
-		//'troy': '^9792',
+		'unionpay': '^62',
+		'jcb': '^(?:35\\d{0,2})',
 		'diners-club': '^(30[0-5]|36)'
 	};
 
@@ -45,6 +54,41 @@ const Card = ({
 	}, [cardNumber, CARDS]);
 
 	const bgGradient = { background: gradient(`tzrhnfd-credit-card`) }
+
+	const cardIconsSwitch = (type) => {
+		let cardIcons;
+		switch (type) {
+			case 'visa':
+				cardIcons = visa;
+				break;
+			case 'amex':
+				cardIcons = amex;
+				break;
+			case 'mastercard':
+				cardIcons = mastercard;
+				break;
+			case 'discover':
+				cardIcons = discover;
+				break;
+			case 'unionpay':
+				cardIcons = unionpay;
+				break;
+			case 'diners-club':
+				cardIcons = diners;
+				break;
+			case 'jcb':
+				cardIcons = jcb;
+				break;
+			case 'maestro':
+				cardIcons = maestro;
+				break;
+			default:
+				return <div className="card__type__image empty" />
+		}
+
+		return <img className="card__type__image" src={cardIcons} alt={type} />
+	}
+
 	return (
 		<div className="panel">
 			<ReactCardFlip isFlipped={isCardFlipped}>
@@ -69,11 +113,7 @@ const Card = ({
 						{ cardHolder }
 					</div>
 					<div className="card__type">
-						{
-							useCardType === 'credit-card' ?
-							<FontAwesomeIcon icon={['far', 'credit-card']}/> :
-							<FontAwesomeIcon icon={['fab', `cc-${useCardType}`]}/>
-						}
+						{ cardIconsSwitch(useCardType) }
 					</div>
 				</div>
 				<div className="card card--back" style={bgGradient}>
@@ -85,11 +125,7 @@ const Card = ({
 							</div>
 						</div>
 						<div className="card__type">
-							{
-								useCardType === 'credit-card' ?
-									<FontAwesomeIcon icon={['far', 'credit-card']}/> :
-									<FontAwesomeIcon icon={['fab', `cc-${useCardType}`]}/>
-							}
+							{ cardIconsSwitch(useCardType) }
 						</div>
 					</div>
 				</div>

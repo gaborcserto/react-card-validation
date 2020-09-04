@@ -44,8 +44,22 @@
 	&__type {
 		bottom: 20px;
 		font-size: 40px;
+		height: 38px;
 		position: absolute;
 		right: 20px;
+		width: 60px;
+
+		&__image {
+			background: white;
+			border-radius: 8px;
+			background-clip: padding-box;
+			color: white;
+			height: 38px;
+			margin: 0;
+			padding: 0;
+			vertical-align: top;
+			width: 60px;
+		}
 	}
 
 	&__strip {
@@ -107,6 +121,10 @@
 		&__number {
 			margin: 45px 7.5px 15px;
 			font-size: 16px;
+
+			.numbers {
+				width: 8px !important;
+			}
 		}
 
 		&__expiry-date,
@@ -117,7 +135,15 @@
 		&__type {
 			bottom: 15px;
 			font-size: 30px;
+			height: 28px;
 			right: 15px;
+			width: 45px;
+
+			&__image {
+				border-radius: 4px;
+				height: 28px;
+				width: 45px;
+			}
 		}
 
 		&__strip {
