@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import gradient from 'random-gradient';
 import ReactCardFlip from 'react-card-flip';
@@ -44,14 +44,13 @@ const Card = ({
 		return cardType(cardNumber);
 	}, [cardNumber, CARDS]);
 
-	const bgGradient = { background: gradient('visa') }
-
+	const bgGradient = { background: gradient(`tzrhnfd-credit-card`) }
 	return (
 		<div className="panel">
 			<ReactCardFlip isFlipped={isCardFlipped}>
 				<div className="card card--front" style={bgGradient}>
 					<div className="card__number">
-						{cardNumber.split("").map((n, i) => (
+						{cardNumber === '**** **** **** ****' ? cardNumber : cardNumber.split("").map((n, i) => (
 							<ReactTextTransition
 								key={i}
 								text={n}

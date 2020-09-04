@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Col, Button } from 'react-bootstrap';
-//import { FieldSet, InputField } from 'fannypack';
-//import { usePaymentInputs } from 'react-payment-inputs';
-//import images from 'react-payment-inputs/images';
-import MaskedFormControl from '../MaskedFormControl';
+import Cleave from 'cleave.js/react';
 
 const CardForm = ({
 	                  cardMonth,
@@ -17,10 +14,6 @@ const CardForm = ({
 	                  children
                   }) => {
 
-	/*const { meta, getCardNumberProps, getExpiryDateProps, getCVCProps } = usePaymentInputs();
-
-	const { erroredInputs, touchedInputs } = meta;*/
-
 	const [cardNumber, setCardNumber] = useState('');
 	const currentYear = new Date().getFullYear();
 	const monthsArr = Array.from({ length: 12 }, (x, i) => {
@@ -32,23 +25,6 @@ const CardForm = ({
 	const onCardNumberChange = (event) => {
 		let { value, name } = event.target;
 		let cardNumber = value;
-		value = value.replace(/\D/g, '');
-		if (/^3[47]\d{0,13}$/.test(value)) {
-			cardNumber = value
-				.replace(/(\d{4})/, '$1 ')
-				.replace(/(\d{4}) (\d{6})/, '$1 $2 ');
-		} else if (/^3(?:0[0-5]|[68]\d)\d{0,11}$/.test(value)) {
-			// diner's club, 14 digits
-			cardNumber = value
-				.replace(/(\d{4})/, '$1 ')
-				.replace(/(\d{4}) (\d{6})/, '$1 $2 ');
-		} else if (/^\d{0,16}$/.test(value)) {
-			// regular cc number, 16 digits
-			cardNumber = value
-				.replace(/(\d{4})/, '$1 ')
-				.replace(/(\d{4}) (\d{4})/, '$1 $2 ')
-				.replace(/(\d{4}) (\d{4}) (\d{4})/, '$1 $2 $3 ');
-		}
 
 		setCardNumber(cardNumber.trimRight());
 		onUpdateState(name, cardNumber);
@@ -67,23 +43,20 @@ const CardForm = ({
 		onUpdateState('isCardFlipped', false);
 	};
 
-
-
 	return (
 		<Form className="form">
 			<div className="card-list">{children}</div>
-			<Form.Group /*controlId="formCardNumber"*/>
+			<Form.Group controlId="formCardNumber">
 				<Form.Label>Card Number</Form.Label>
-				<MaskedFormControl type="tel"
-							//{...getCardNumberProps()}
-				              name="cardNumber"
-				              maxLength="19"
-				              mask="1111 1111 1111 1111"
-				              ref={cardNumberRef}
-				              //isInvalid={touchedInputs.cardNumber && erroredInputs.cardNumber}
-				              //placeholder="0000 0000 0000 0000"
-				              placeholder="Enter card number"
-				              onChange={onCardNumberChange}/>
+				<Cleave type="tel"
+				        className="form-control"
+				        value={cardNumber}
+				        options={{creditCard: true}}
+				        name="cardNumber"
+				        maxLength="19"
+				        ref={cardNumberRef}
+				        placeholder="Enter card number"
+				        onChange={onCardNumberChange}/>
 			</Form.Group>
 			<Form.Group controlId="formCardHolder">
 				<Form.Label>Name on the card</Form.Label>
