@@ -16,6 +16,7 @@ const CardForm = ({
 
 	const [validated, setValidated] = useState(false);
 	const [cardNumber, setCardNumber] = useState('');
+
 	const currentYear = new Date().getFullYear();
 	const monthsArr = Array.from({ length: 12 }, (x, i) => {
 		const month = i + 1;
@@ -69,9 +70,6 @@ const CardForm = ({
 				        ref={cardNumberRef}
 				        placeholder="Enter card number"
 				        onChange={onCardNumberChange}/>
-				<Form.Control.Feedback type="invalid">
-					Please enter the card number
-				</Form.Control.Feedback>
 			</Form.Group>
 			<Form.Group controlId="formCardHolder">
 				<Form.Label>Name on the card</Form.Label>
@@ -81,9 +79,6 @@ const CardForm = ({
 				              ref={cardHolderRef}
 				              placeholder="Name on the card"
 				              onChange={handleFormChange}/>
-				<Form.Control.Feedback type="invalid">
-					Please enter the name
-				</Form.Control.Feedback>
 			</Form.Group>
 			<Form.Row>
 				<Form.Group as={Col} controlId="formCardMonth">
@@ -102,9 +97,6 @@ const CardForm = ({
 							</option>
 						))}
 					</Form.Control>
-					<Form.Control.Feedback type="invalid">
-						Please choose month
-					</Form.Control.Feedback>
 				</Form.Group>
 				<Form.Group as={Col} controlId="formCardYear">
 					<Form.Control as="select"
@@ -121,24 +113,18 @@ const CardForm = ({
 							</option>
 						))}
 					</Form.Control>
-					<Form.Control.Feedback type="invalid">
-						Please choose year
-					</Form.Control.Feedback>
 				</Form.Group>
 				<Form.Group as={Col} controlId="formCardCvc">
 					<Form.Label>CVC / CVV</Form.Label>
-					<Form.Control type="number"
+					<Form.Control type="tel"
 					              required
 					              name="cardCVC"
-					              maxLength="43"
+					              maxLength={3}
 					              placeholder="CVC / CVV"
 					              onChange={handleFormChange}
 					              onFocus={onCVCFocus}
 					              onBlur={onCVCBlur}
 					              ref={cardCVC}/>
-					<Form.Control.Feedback type="invalid">
-						Please enter the CVC
-					</Form.Control.Feedback>
 				</Form.Group>
 			</Form.Row>
 			<Button className="btn-pay" type="submit" block>Pay</Button>

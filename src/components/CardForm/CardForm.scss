@@ -42,8 +42,9 @@
 		background: linear-gradient(to right, #36d1dc 0%, #00B4DB 50%, #0083B0 100%);
 		background-size: 200% auto;
 		border: transparent;
-		box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+		box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
 		transition: 0.5s;
+
 		&:hover {
 			background-position: right center;
 		}
@@ -67,5 +68,9 @@
 
 	.card-list {
 		margin-top: -140px;
+	}
+
+	&.was-validated .form-control:valid, .form-control.is-valid {
+		background-position: right calc(0.375em + 1.1875rem) center;
 	}
 }

@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import gradient from 'random-gradient';
 import ReactCardFlip from 'react-card-flip';
 import ReactTextTransition from "react-text-transition";
 
@@ -53,10 +52,9 @@ const Card = ({
 		return cardType(cardNumber);
 	}, [cardNumber, CARDS]);
 
-	const bgGradient = { background: gradient(`tzrhnfd-credit-card`) }
-
 	const cardIconsSwitch = (type) => {
 		let cardIcons;
+
 		switch (type) {
 			case 'visa':
 				cardIcons = visa;
@@ -86,13 +84,19 @@ const Card = ({
 				return <div className="card__type__image empty" />
 		}
 
-		return <img className="card__type__image" src={cardIcons} alt={type} />
+		const myStyle = {
+			WebkitMaskImage: `url(${cardIcons})`,
+			maskImage: `url(${cardIcons})`,
+			color: 'red'
+		};
+
+		return <div className="card__type__image" style={myStyle} />
 	}
 
 	return (
 		<div className="panel">
 			<ReactCardFlip isFlipped={isCardFlipped}>
-				<div className="card card--front" style={bgGradient}>
+				<div className="card card--front">
 					<div className="card__number">
 						{cardNumber === '**** **** **** ****' ? cardNumber : cardNumber.split("").map((n, i) => (
 							<ReactTextTransition
@@ -116,7 +120,7 @@ const Card = ({
 						{ cardIconsSwitch(useCardType) }
 					</div>
 				</div>
-				<div className="card card--back" style={bgGradient}>
+				<div className="card card--back">
 					<div className="card__strip" />
 					<div className="card__back-content">
 						<div className="card__secret">
