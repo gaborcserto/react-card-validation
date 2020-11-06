@@ -25,18 +25,18 @@ const Card = ({
 	              cardDateRef
               }) => {
 
-	const CARDS = {
-		'visa': '^4',
-		'amex': '^(34|37)',
-		'mastercard': '^5[1-5]',
-		'maestro': '^(?:5[0678]\\\\d{0,2}|6304|67\\\\d{0,2})',
-		'discover': '^6011',
-		'unionpay': '^62',
-		'jcb': '^(?:35\\d{0,2})',
-		'diners-club': '^(30[0-5]|36)'
-	};
-
 	const useCardType = useMemo(() => {
+		const CARDS = {
+			'visa': '^4',
+			'amex': '^(34|37)',
+			'mastercard': '^5[1-5]',
+			'maestro': '^(?:5[0678]\\\\d{0,2}|6304|67\\\\d{0,2})',
+			'discover': '^6011',
+			'unionpay': '^62',
+			'jcb': '^(?:35\\d{0,2})',
+			'diners-club': '^(30[0-5]|36)'
+		};
+
 		const cardType = (cardNumber) => {
 			const number = cardNumber;
 			let re;
@@ -50,7 +50,7 @@ const Card = ({
 			return 'credit-card';
 		}
 		return cardType(cardNumber);
-	}, [cardNumber, CARDS]);
+	}, [cardNumber]);
 
 	const cardIconsSwitch = (type) => {
 		let cardIcons;

@@ -27,7 +27,7 @@ const CardValidator = () =>{
 		[state]
 	);
 
-	let formFieldsRefObj = {
+	const formFieldsRefObj = {
 		cardNumber: useRef(),
 		cardHolder: useRef(),
 		cardDate: useRef(),
