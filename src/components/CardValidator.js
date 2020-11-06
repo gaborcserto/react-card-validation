@@ -27,6 +27,7 @@ const CardValidator = () =>{
 		[state]
 	);
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const formFieldsRefObj = {
 		cardNumber: useRef(),
 		cardHolder: useRef(),
